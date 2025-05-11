@@ -8,19 +8,16 @@
         <select v-model="category">
             <option value="all">All Categories</option>
             <option value="Games">Games</option>
-            <option value="board-games">Board Games</option>
-            <option value="movies">Movies</option>
-            <option value="tech">Tech</option>
+            <option value="Board Games">Board Games</option>
+            <option value="Movies">Movies</option>
         </select>
         <br><br>
         
         <!--Blog cards-->
         <div class="blog_container">
-            <div v-for="post in filteredPosts" :key="post.id" class="blog_post">
-                <blogList v-for="post in filteredPosts" :key="post.id" :post="post"/>
-            </div>
+            <blogList v-for="post in filteredPosts" :key="post.id" :post="post"/>
         </div>
-        
+
     </div>    
 </template>
 
@@ -51,7 +48,9 @@ export default{
     },
 
     mounted(){
-        this.blogStore.getAllBlogs();
+        if (this.blogStore.posts.length === 0) {
+                this.blogStore.getAllBlogs();
+        }
     }
 }
 
