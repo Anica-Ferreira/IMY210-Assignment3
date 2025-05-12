@@ -1,24 +1,22 @@
 <!--Anica Ferreira u24581802-->
 <template>
-    <div>
         <h1>Insight Arcade Blogs</h1>
         <p>Read the most popular blogs for reviews and thoughts on games, board games, movies and more!</p>
     
         <!--Category filter-->
-        <select v-model="category">
+        <div id="filter_container">
+            <select v-model="category">
             <option value="all">All Categories</option>
             <option value="Games">Games</option>
             <option value="Board Games">Board Games</option>
             <option value="Movies">Movies</option>
         </select>
-        <br><br>
+        </div>
         
         <!--Blog cards-->
         <div class="blog_container">
             <blogList v-for="post in filteredPosts" :key="post.id" :post="post"/>
-        </div>
-
-    </div>    
+        </div>   
 </template>
 
 <script>
@@ -57,7 +55,24 @@ export default{
 </script>
 
 <style scoped>
+    h1{
+        text-align: center;
+        margin-top: 1.5em;
+    }
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap'); 
+    p{
+        text-align: center;
+        font-weight: 200;
+        font-size: 1em;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    #filter_container{
+        text-align: right;
+        max-width: 90%;
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
 
 </style>

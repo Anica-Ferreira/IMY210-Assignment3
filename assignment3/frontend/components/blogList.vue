@@ -2,10 +2,14 @@
 
 <!--Component to display a single blog post-->
 <template>
-    <NuxtLink  :to="`/blog/${post.slug}`"><img :src="'http://localhost:1337' + post.cover.url" alt="Blog cover image" class="blog_image" width="500"></NuxtLink>
-    <h2>{{ post.title }}</h2>
-    <p><strong>By:</strong> {{ post.author }}</p>
-    <p>{{ post.content.slice(0, 100) }}...<NuxtLink  :to="`/blog/${post.slug}`">Read More</NuxtLink></p>
+    <div>
+        <NuxtLink  :to="`/blog/${post.slug}`"><img :src="'http://localhost:1337' + post.cover.url" alt="Blog cover image" class="blog_image"></NuxtLink>
+    <div>
+        <p><strong>By:</strong> {{ post.author }}</p>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.content.slice(0, 100) }}...<NuxtLink  :to="`/blog/${post.slug}`"> Read More</NuxtLink></p>
+    </div>
+    </div>
 </template>
 
 <script>

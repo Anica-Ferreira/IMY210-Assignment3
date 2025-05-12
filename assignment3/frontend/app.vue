@@ -1,9 +1,11 @@
 <!--Anica Ferreira u24581802-->
 <template>
-  <div id="page_container">
+  <div id="top">
         <nav>
             <div id="logo_container">
-                <p id="logo">Insight Arcade</p>
+                <NuxtLink to="/">
+                    <img id="logo" src="assets/logo.svg">
+                </NuxtLink>
             </div>
             <ul>
                 <li><NuxtLink to="/">Home</NuxtLink></li>
