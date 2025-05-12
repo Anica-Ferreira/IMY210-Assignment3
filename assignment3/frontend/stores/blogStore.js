@@ -1,4 +1,3 @@
-
 //Anica Ferreira u24581802
 import { defineStore } from 'pinia'
 
@@ -23,8 +22,9 @@ export const useBlogStore = defineStore('blog', {
                 const res = await fetch("http://localhost:1337/api/blog-posts?populate=*");
                 const data = await res.json();
                 this.posts = data.data;
+
                 console.log(this.posts);
-                console.log(this.posts.title);
+
             } catch (err) {
                 console.log(err);
             }

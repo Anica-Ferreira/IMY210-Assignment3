@@ -12,6 +12,7 @@
         </nav>
         <NuxtPage />
         <footer>
+            <p>Return to <a href="#top">top</a></p>
             <p>&copy; 2025 Insight Arcade  All rights reserved.</p>
         </footer>
     </div>

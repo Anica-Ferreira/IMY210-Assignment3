@@ -9,7 +9,6 @@
 </template>
 
 <script>
-    import { useBlogStore } from '@/stores/blogStore'
 
     export default{
         name: 'BlogSnippet',
@@ -19,7 +18,7 @@
                 type: Object,
                 required: true,
             },
-        },    
+        },   
     };
 
 </script>
