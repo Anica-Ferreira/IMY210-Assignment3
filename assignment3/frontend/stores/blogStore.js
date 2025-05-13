@@ -19,15 +19,15 @@ export const useBlogStore = defineStore('blog', {
                 return;
             } 
             try {
-                const res = await fetch("http://localhost:1337/api/blog-posts?populate=*");
+                const config = useRuntimeConfig();
+                const res = await fetch(`${config.public.api}/api/blog-posts?populate=*`);
                 const data = await res.json();
-                this.posts = data.data;
-
-                console.log(this.posts);
+                this.posts = data.data; 
 
             } catch (err) {
                 console.log(err);
             }
         }    
-    }
+    },
+
 });
